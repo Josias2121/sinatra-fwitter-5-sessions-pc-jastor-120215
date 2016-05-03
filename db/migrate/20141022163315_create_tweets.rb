@@ -4,7 +4,7 @@ class CreateTweets < ActiveRecord::Migration
       t.string :username
       t.string :status
     end
-  end
+  end 
 
   def down
     drop_table :tweets

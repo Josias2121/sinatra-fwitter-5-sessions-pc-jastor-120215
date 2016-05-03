@@ -1,19 +1,44 @@
 <!doctype html>
 <html>
   <head>
-    <title>Week 4</title>
+    <title>Fwitter</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/style.css">
+    
+  <link rel="shortcut icon" type="image/x-icon" href="https://g.twimg.com/Twitter_logo_blue.png" />`
   </head>
+  
   <body>
+     <nav class="navbar navbar-default navbar-fixed-top gradient-background">
+      
+        <% if logged_in? %>
+            <h1>Welcome, <%= current_user.username %></h1>
+        <% else %>
+            <a href="/login">Login</a>
+            <a href="/signup">Sign Up</a>
+        <% end %>
+    
 
+ <a href="/tweet"> Post a Tweet!</a>
+ <a href="/logout">Logout</a>
+        </nav>
+   
     <div class="container">
+ <br>
+ <br>
+ <br>
       <h1>Welcome to Fwitter!</h1>
-      <%= yield %> 
       
-      
+      <% if logged_in? %>
+        <a href="https://twitter.com/<%= current_user.username %>" class="twitter-follow-button" data-show-count="false" data-size="large">Follow <%= current_user.username %></a>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+      <% end %>
+ 
+      <%= yield %>  
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    
+   
   </body>
 </html>

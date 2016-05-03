@@ -3,11 +3,32 @@
   margin-top: 15px;
 }
 
-#follow-btn {
-  margin-left: 10px;
-  display:inline-block;
+.follow-btn {
+  position: absolute !important;
+  right: 30px !important;
+  display:inline;
 }
 
 .footer {
   margin-top: 25px;
+}
+
+.gradient-background {
+  background-image: url("https://abs.twimg.com/a/1462262539/img/t1/lohp_streams_header_bg_v4.png");
+  background-size: 100%;
+    background-repeat: none;
+    background-position: center;
+    position: absolute;
+}
+
+body{
+  background-color:#C6E2FF;
+}
+.nav .navbar-default .navbar-fixed-top {
+  
+}
+a{
+  color:white;
+  font-family: 'Josefin Sans', sans-serif;
+  padding: 50px 40px 50px 90px;
 }
